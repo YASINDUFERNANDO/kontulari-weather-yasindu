@@ -12,19 +12,22 @@ function App() {
   useEffect(() => {
     if (Object.keys(forecast).length === 0) {
       api
-        .get("location=Salvador")
+        .get("?location=Salvador")
         .then((forecast) => {
           setForecast(forecast.data);
+          setLoading(false)
         })
         .catch((error) => {
-          console.error(erro);
+          console.error(error);
         });
     }
   }, [forecast]);
 
+
   const Weather =
     loading || Object.keys(forecast).length === 0 ? (
       <h1>Loading...</h1>
+      
     ) : (
       <WeatherCard forecast={forecast} />
     );

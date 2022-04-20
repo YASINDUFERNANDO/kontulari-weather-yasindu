@@ -6,7 +6,11 @@ const WeatherCard = (props) => {
 
   return (
     <Container>
-      <h6>{forecast.title}</h6>
+      <h6>Location : {forecast.title}</h6>
+      <h6>Time : {forecast.time}</h6>
+      <h6>Sun Rise : {forecast.sun_rise}</h6>
+      <h6>Sun Set : {forecast.sun_set}</h6>
+      <h6>Time Zone : {forecast.timezone}</h6>
       <span>{forecast.consolidated_weather[0].the_temp}</span>
     </Container>
   );
